@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@300;400;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --primary: #000000;
+  --secondary: #ffffff;
+  --accent: #ce1212;
+  --text-main: #212529;
+  --text-muted: #6c757d;
+  --bg-light: #f8f9fa;
+  --border-color: #dee2e6;
+  --transition-fast: 0.3s ease;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--text-main);
+  background-color: var(--secondary);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+.transition-all {
+  transition: all var(--transition-fast);
+}
+
+/* Custom Utilities for the Template */
+.btn-fashion {
+  padding: 0.75rem 2rem;
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.btn-fashion:hover {
+  background-color: #1f2937;
+}
+
+.btn-fashion-outline {
+  padding: 0.75rem 2rem;
+  border: 2px solid #000000;
+  background-color: transparent;
+  color: #000000;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.btn-fashion-outline:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.product-card-hover {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.product-card-hover .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-card-hover:hover .overlay {
+  opacity: 1;
+}
