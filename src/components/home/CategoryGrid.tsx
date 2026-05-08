@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { CATEGORIES } from '../../constants';
+import OptimizedImage from '../common/OptimizedImage';
 
 export default function CategoryGrid() {
   return (
@@ -16,7 +17,7 @@ export default function CategoryGrid() {
           {CATEGORIES.map((cat, idx) => (
             <Link 
               key={cat.id} 
-              to={`/category/${cat.id}`}
+              to={`/${cat.id}`}
               className={`group relative overflow-hidden h-[500px] ${
                 idx === 0 || idx === 3 ? 'lg:col-span-1' : ''
               }`}
@@ -26,10 +27,10 @@ export default function CategoryGrid() {
                 transition={{ duration: 0.8 }}
                 className="h-full w-full"
               >
-                <img 
+                <OptimizedImage 
                   src={(cat as any).imageUrl} 
                   alt={cat.name} 
-                  className="h-full w-full object-cover"
+                  className="h-full w-full"
                 />
               </motion.div>
               

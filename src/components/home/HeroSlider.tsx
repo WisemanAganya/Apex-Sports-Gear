@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { HERO_IMAGES } from '../../constants';
+import OptimizedImage from '../common/OptimizedImage';
 
 const HERO_CONTENT = [
   {
@@ -52,15 +53,18 @@ export default function HeroSlider() {
           className="absolute inset-0"
         >
           {/* Background Image with Zoom Animation */}
-          <motion.img
+          <motion.div
             initial={{ scale: 1.1 }}
             animate={{ scale: 1 }}
             transition={{ duration: 10 }}
-            src={HERO_IMAGES[current]}
-            alt={`Hero ${current + 1}`}
-            className="h-full w-full object-cover"
-            referrerPolicy="no-referrer"
-          />
+            className="h-full w-full"
+          >
+            <OptimizedImage
+              src={HERO_IMAGES[current]}
+              alt={`Hero ${current + 1}`}
+              className="h-full w-full"
+            />
+          </motion.div>
           
           {/* Overlay */}
           <div className="absolute inset-0 bg-black/20" />

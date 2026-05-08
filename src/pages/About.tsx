@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Shield, Target, Users, Zap } from 'lucide-react';
+import OptimizedImage from '../components/common/OptimizedImage';
 
 export default function About() {
   const stats = [
@@ -14,10 +15,10 @@ export default function About() {
     <div className="bg-white">
       {/* Hero */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden bg-black">
-        <img 
+        <OptimizedImage 
           src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1920" 
           alt="About Hero" 
-          className="absolute inset-0 w-full h-full object-cover opacity-50 grayscale"
+          className="absolute inset-0 w-full h-full opacity-50 grayscale"
         />
         <div className="relative z-10 text-center text-white px-6">
            <p className="text-[10px] font-bold uppercase tracking-[0.5em] mb-4">Our Journey</p>
@@ -43,10 +44,10 @@ export default function About() {
              </div>
              <div className="lg:w-1/2 grid grid-cols-2 gap-6">
                 <div className="aspect-[3/4] bg-gray-50 overflow-hidden">
-                   <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800" alt="" className="w-full h-full object-cover" />
+                   <OptimizedImage src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800" alt="Athletic performance" className="w-full h-full" />
                 </div>
                 <div className="aspect-[3/4] bg-gray-50 overflow-hidden mt-12">
-                   <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=800" alt="" className="w-full h-full object-cover" />
+                   <OptimizedImage src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=800" alt="Gym training" className="w-full h-full" />
                 </div>
              </div>
           </div>

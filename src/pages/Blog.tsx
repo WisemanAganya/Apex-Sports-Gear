@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, User, ChevronRight, ArrowRight } from 'lucide-react';
+import { Calendar, User, ArrowRight } from 'lucide-react';
+import OptimizedImage from '../components/common/OptimizedImage';
 
 const BLOG_POSTS = [
   {
@@ -55,10 +56,10 @@ export default function Blog() {
           {BLOG_POSTS.map((post) => (
             <div key={post.id} className="group">
               <div className="aspect-[16/9] overflow-hidden bg-gray-50 mb-8 relative">
-                <img 
+                <OptimizedImage 
                   src={post.imageUrl} 
                   alt={post.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute top-6 left-6 bg-white px-4 py-2 text-[9px] font-bold uppercase tracking-widest">
                   {post.category}

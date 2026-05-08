@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ShoppingCart, Heart, Eye, Share2 } from 'lucide-react';
+import { ShoppingCart, Heart, Eye } from 'lucide-react';
 import { Product } from '../../types';
 import { useCart } from '../../context/CartContext';
 import { useWishlist } from '../../context/WishlistContext';
 import { motion } from 'motion/react';
+import OptimizedImage from '../common/OptimizedImage';
 
 interface ProductCardProps {
   product: Product;
-  key?: React.Key;
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
@@ -43,13 +43,10 @@ export default function ProductCard({ product }: ProductCardProps) {
       {/* Image Container */}
       <div className="relative aspect-[3/4] overflow-hidden bg-[#f9f9f9] mb-6">
         <Link to={`/product/${product.id}`}>
-          <motion.img
-            whileHover={{ scale: 1.08 }}
-            transition={{ duration: 0.8 }}
+          <OptimizedImage
             src={product.imageUrl}
             alt={product.name}
-            className="h-full w-full object-cover"
-            referrerPolicy="no-referrer"
+            className="h-full w-full"
           />
         </Link>
         

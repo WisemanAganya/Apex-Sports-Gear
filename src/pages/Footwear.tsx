@@ -4,6 +4,7 @@ import ProductCard from '../components/home/ProductCard';
 import { MOCK_PRODUCTS, FOOTWEAR_SIZING } from '../constants';
 import { motion, AnimatePresence } from 'motion/react';
 import { Ruler, ChevronDown } from 'lucide-react';
+import OptimizedImage from '../components/common/OptimizedImage';
 
 export default function Footwear() {
   const footwearProducts = MOCK_PRODUCTS.filter(p => p.category.toLowerCase() === 'footwear');
@@ -25,7 +26,7 @@ export default function Footwear() {
     <div className="bg-white pt-10 pb-24">
       <div className="bg-[#0f0f0f] py-24 mb-12 relative overflow-hidden text-white">
         <div className="absolute inset-0 opacity-20">
-           <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=1920" className="w-full h-full object-cover" alt="" />
+           <OptimizedImage src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=1920" className="w-full h-full" alt="Footwear Background" />
         </div>
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12 text-center relative z-10">
           <p className="text-[10px] font-black uppercase tracking-[0.5em] text-accent mb-4">Apex Elite</p>

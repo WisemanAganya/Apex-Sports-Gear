@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import HeroSlider from '../components/home/HeroSlider';
 import CategoryGrid from '../components/home/CategoryGrid';
 import ProductCard from '../components/home/ProductCard';
-import { MOCK_PRODUCTS } from '../constants';
-import { Truck, ShieldCheck, RefreshCw, Headphones } from 'lucide-react';
-import { motion } from 'motion/react';
+import OptimizedImage from '../components/common/OptimizedImage';
+import { MOCK_PRODUCTS, SOCIAL_IMAGES } from '../constants';
+import { Truck, ShieldCheck, RefreshCw, Headphones, Instagram } from 'lucide-react';
 
 export default function Home() {
   const featuredProducts = MOCK_PRODUCTS.filter(p => p.featured);
@@ -67,9 +67,9 @@ export default function Home() {
       {/* Parallax Banner */}
       <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img 
+          <OptimizedImage 
             src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80&w=1920" 
-            className="w-full h-full object-cover grayscale brightness-50"
+            className="w-full h-full grayscale brightness-50"
             alt="Banner"
           />
         </div>
@@ -103,12 +103,12 @@ export default function Home() {
         <div className="max-w-[1440px] mx-auto px-6 lg:px-12 text-center">
           <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-gray-400 mb-12">Follow Our Journey @APEXSPORTS</p>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-             {[1,2,3,4,5,6].map(i => (
+             {SOCIAL_IMAGES.map((img, i) => (
                <div key={i} className="aspect-square bg-gray-100 overflow-hidden relative group cursor-pointer">
-                  <img 
-                    src={`https://images.unsplash.com/photo-${1500000000000 + i * 100000}?auto=format&fit=crop&q=80&w=600`} 
+                  <OptimizedImage 
+                    src={img} 
                     alt="Social" 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <Instagram className="text-white h-6 w-6" />
@@ -121,5 +121,3 @@ export default function Home() {
     </div>
   );
 }
-
-import { Instagram } from 'lucide-react';

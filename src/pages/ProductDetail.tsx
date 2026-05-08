@@ -4,8 +4,9 @@ import { MOCK_PRODUCTS } from '../constants';
 import { useCart } from '../context/CartContext';
 import { useWishlist } from '../context/WishlistContext';
 import ProductCard from '../components/home/ProductCard';
+import OptimizedImage from '../components/common/OptimizedImage';
 import { Heart, ShoppingCart, Share2, ChevronRight, Star, Truck, ShieldCheck, RefreshCw } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 
 export default function ProductDetail() {
   const { id } = useParams<{ id: string }>();
@@ -87,19 +88,17 @@ export default function ProductDetail() {
                     onClick={() => setMainImage(product.imageUrl)}
                     className={`aspect-square w-full border-2 ${mainImage === product.imageUrl && i === 0 ? 'border-black' : 'border-transparent'} overflow-hidden bg-gray-50`}
                   >
-                    <img src={product.imageUrl} alt="Thumbnail" className="w-full h-full object-cover" />
+                    <OptimizedImage src={product.imageUrl} alt="Thumbnail" className="w-full h-full" />
                   </button>
                 ))}
              </div>
              {/* Main Image */}
              <div className="flex-1 order-1 md:order-2 aspect-[3/4] bg-gray-50 overflow-hidden relative group">
-                <motion.img 
+                <OptimizedImage 
                   key={mainImage}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
                   src={mainImage} 
                   alt={product.name} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full transition-transform duration-700 group-hover:scale-110"
                 />
                 <button className="absolute bottom-6 right-6 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-black hover:text-white transition-all">
                   <Share2 className="h-5 w-5" />
